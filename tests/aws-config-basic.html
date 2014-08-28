@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>aws-config</title>
+
+  <script src="../../platform/platform.js"></script>
+  <link rel="import" href="../../polymer-test-tools/tools.html">
+  <script src="../../polymer-test-tools/htmltest.js"></script>
+
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../aws-config.html">
+
+</head>
+<body>
+
+  <aws-config region="eu-west-1" key="MY_KEY" secret="MY_SECRET"></aws-config>
+
+  <script>
+
+    document.addEventListener('polymer-ready', function() {
+      var myEl = document.querySelector('aws-config');
+      assert.equal(typeof myEl.sink, 'object');
+      assert.equal(myEl.sink.region, 'eu-west-1');
+      assert.equal(myEl.sink.accessKeyId, 'MY_KEY');
+      assert.equal(myEl.sink.secretAccessKey, 'MY_SECRET');
+      done();
+    });
+
+  </script>
+
+</body>
+</html>

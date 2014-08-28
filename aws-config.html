@@ -1,0 +1,82 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Element exporting an AWS configuration object based on the credentials
+and attributes provided and that can be used to configure other AWS
+web components.
+
+##### Example
+
+    <aws-config region="eu-west-1" key="MY_KEY" secret="MY_SECRET"
+                sink="{{awsConfig}}"></aws-config>
+
+@element aws-config
+@blurb Element exporting an AWS configuration object.
+@status alpha
+-->
+<polymer-element name="aws-config" attributes="region key secret sink">
+  <script>
+    Polymer('aws-config', {
+      observe: {
+        'region': 'update',
+        'key':    'update',
+        'secret': 'update'
+      },
+
+      /**
+       * The AWS `region`.
+       *
+       * @attribute region
+       * @type String
+       */
+      region: undefined,
+
+      /**
+       * The AWS access key id.
+       *
+       * @attribute key
+       * @type String
+       */
+      key: undefined,
+
+      /**
+       * The AWS secret access key.
+       *
+       * @attribute secret
+       * @type String
+       */
+      secret: undefined,
+
+      /**
+       * The read-only `sink` attribute exports the current configuration
+       * object based on the provided attributes.
+       *
+       * @attribute sink
+       * @type Object
+       */
+      sink: undefined,
+
+
+      /* == Lifecycle == */
+
+      ready: function() {
+        this.update();
+      },
+
+
+      /* == Internal methods == */
+
+      update: function() {
+        if (this.region && this.key && this.secret) {
+          this.sink = {
+            region:          this.region,
+            accessKeyId:     this.key,
+            secretAccessKey: this.secret
+          };
+        } else {
+          delete this.sink;
+        }
+      }
+    });
+  </script>
+</polymer-element>
