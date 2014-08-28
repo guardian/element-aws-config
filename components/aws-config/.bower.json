@@ -1,0 +1,28 @@
+{
+  "name": "aws-config",
+  "authors": [
+    "Sébastien Cevey <seb.cevey@theguardian.com>"
+  ],
+  "description": "A simple Polymer element exporting an AWS configuration object",
+  "keywords": "aws, configuration, polymer, web-components",
+  "main": "aws-config.html",
+  "license": "Apache-2",
+  "homepage": "https://github.com/guardian/element-aws-config/",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.4",
+    "polymer-test-tools": "Polymer/polymer-test-tools#~0.3.3"
+  },
+  "_release": "f5bd1358a4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f5bd1358a46c507a4e5ef3504c7350ddc15f5347"
+  },
+  "_source": "git://github.com/guardian/element-aws-config.git",
+  "_target": "master",
+  "_originalSource": "guardian/element-aws-config",
+  "_direct": true
+}

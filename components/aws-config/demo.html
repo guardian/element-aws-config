@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>aws-config Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="aws-config.html">
+
+</head>
+<body unresolved>
+
+  <p>An example of using <code>&lt;aws-config></code>:</p>
+
+  <template is="auto-binding">
+    <aws-config region="eu-west-1" key="MY_KEY" secret="MY_SECRET"
+                sink="{{awsConfig}}"></aws-config>
+    <p>AWS region: {{awsConfig.region}}</p>
+    <p>AWS key:    {{awsConfig.accessKeyId}}</p>
+    <p>AWS secret: {{awsConfig.secretAccessKey}}</p>
+
+    <some-aws-component config="{{awsConfig}}"></some-aws-component>
+  </template>
+
+</body>
+</html>
