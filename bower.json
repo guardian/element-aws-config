@@ -13,7 +13,7 @@
     "**/.*"
   ],
   "dependencies": {
-    "polymer": "~0.4.1",
-    "polymer-test-tools": "Polymer/polymer-test-tools#~0.4.1"
+    "polymer": "^0.5.2",
+    "polymer-test-tools": "Polymer/polymer-test-tools#^0.5.2"
   }
 }
